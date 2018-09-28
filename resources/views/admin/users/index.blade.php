@@ -14,7 +14,7 @@
 
 
     <div class="bgc-white bd bdrs-3 p-20 mB-20">
-        <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <table id="dataTable" class="table table-hover table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -23,13 +23,13 @@
                 </tr>
             </thead>
             
-            <tfoot>
+            <!-- <tfoot>
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Actions</th>
                 </tr>
-            </tfoot>
+            </tfoot> -->
             
             <tbody>
                 @foreach ($items as $item)
