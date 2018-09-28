@@ -1,4 +1,4 @@
-<li class="nav-item mT-30 active">
+<li class="nav-item mT-30">
     <a class='sidebar-link' href="{{ route(ADMIN . '.dash') }}" default>
         <span class="icon-holder">
             <i class="c-blue-500 ti-home"></i>
