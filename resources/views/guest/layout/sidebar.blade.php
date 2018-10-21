@@ -4,7 +4,7 @@
 		<div class="sidebar-logo">
 			<div class="peers ai-c fxw-nw">
 				<div class="peer peer-greed">
-					<a class='sidebar-link td-n' href="{{ route(ADMIN . '.dash') }}">
+					<a class='sidebar-link td-n' href="/">
 						<div class="peers ai-c fxw-nw">
 							<div class="peer">
 								<div class="logo">
@@ -29,7 +29,7 @@
 
 		<!-- ### $Sidebar Menu ### -->
 		<ul class="sidebar-menu scrollable pos-r">
-			@include('admin.partials.menu')
+			@include('guest.layout.menu')
 		</ul>
 	</div>
 </div>

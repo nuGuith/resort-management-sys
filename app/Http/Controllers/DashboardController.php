@@ -10,4 +10,24 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard.index');
     }
+
+    public function welcome()
+    {
+        return view('guest.guest-welcome');
+    }
+
+    public function resort()
+    {
+        return view('guest.resort.index');
+    }
+
+    public function rooms()
+    {
+        return view('guest.rooms.index');
+    }
+
+    public function schedule()
+    {
+        return view('guest.schedule.index');
+    }
 }

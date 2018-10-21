@@ -17,6 +17,9 @@ class AppServiceProvider extends ServiceProvider
         if (!defined('ADMIN')) {
            define('ADMIN', config('variables.APP_ADMIN', 'admin'));
         }
+        if (!defined('GUEST')) {
+           define('GUEST', config('variables.APP_GUEST', 'guest'));
+        }
         require_once base_path('resources/macros/form.php');
         Schema::defaultStringLength(191);
     }
