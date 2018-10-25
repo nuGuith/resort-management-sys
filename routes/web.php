@@ -83,6 +83,8 @@ Route::get('/admin/m/prices', function () {
     return view('admin.admin-m-prices');
 });
 
+Route::resource('/admin/reservation-prices', 'PricesController');
+
 
 /*
 |------------------------------------------------------------------------------------
