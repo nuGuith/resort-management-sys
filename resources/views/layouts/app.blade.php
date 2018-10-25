@@ -11,6 +11,7 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
 
   <!-- Styles -->
+  <link href="{{ asset('../vendor/themify-icons/css/themify-icons.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
 <body class="app">

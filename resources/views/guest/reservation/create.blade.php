@@ -1,4 +1,4 @@
-@extends('admin.default')
+@extends('guest.layout.default')
 
 @section('page-header')
     Guest <small>NEW RESERVATION</small>
@@ -9,21 +9,22 @@
         <td style="width: 40%">
             <div class="form-group">
                 <label for="reservation-type" class="text-normal text-dark">Reservation Type:</label>
-                <select id="reservation-type" class="form-control select2" name="reservation-type" value="" required="" autofocus="">
-                    <option>&nbsp;</option>
+                <select id="reservation-type" class="form-control" name="reservation-type" value="" required="" autofocus="">
+                    <option></option>
                     <option>Event</option>
                     <option>Stay-In</option>
                     <option>Pool Reservation</option>
                 </select><br>
 
                 <label for="rooms" class="text-normal text-dark">Rooms:</label>
-                <select id="rooms" class="form-control select2" name="rooms" value="" required="" autofocus="" multiple>
-                    <option>&nbsp;</option>
+                <select multiple="" id="rooms" class="form-control" name="rooms" value="" required="" autofocus="">
+                    <option> </option>
                     <option>Room 1</option>
                     <option>Room 2</option>
                     <option>Room 3</option>
                     <option>Room 4</option>
-                </select><br><br>
+                </select>
+                <br>
 
                 <label for="date-starts" class="text-normal text-dark">Date Starts:</label><br>
                 <input id="date-starts" type="date" class="form-control" name="date-starts" value="" required="" autofocus="" style="display: inline; width: 50%">
@@ -33,7 +34,7 @@
                 <input id="date-ends" type="date" class="form-control" name="date-ends" value="" required="" autofocus="" style="display: inline; width: 50%">
                 <input id="time-ends" type="time" class="form-control" name="time-ends" value="" required="" autofocus="" style="display: inline; width: 49%"><br><br>
 
-                <label for="people" class="text-normal text-dark">Number of Guests:</label>
+                <label for="people" class="text-normal text-dark">Number of People:</label>
                 <input id="people" type="number" class="form-control" name="people" value="" required="" autofocus=""><br>
 
                 <label for="amount" class="text-normal text-dark">Total Amount:</label>
