@@ -47,6 +47,45 @@ Route::get('/', function () {
 
 /*
 |------------------------------------------------------------------------------------
+| ADMIN
+|------------------------------------------------------------------------------------
+*/
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.admin-dashboard');
+});
+
+Route::get('/admin/schedule', function () {
+    return view('admin.admin-schedule');
+});
+
+Route::get('/admin/reservations', function () {
+    return view('admin.admin-reservations');
+});
+
+Route::get('/admin/view/reservation', function () {
+    return view('admin.admin-view-reservation');
+});
+
+Route::get('/admin/sales', function () {
+    return view('admin.admin-sales');
+});
+
+Route::get('/admin/m/rooms', function () {
+    return view('admin.admin-m-rooms');
+});
+
+Route::get('/admin/m/resort', function () {
+    return view('admin.admin-m-resort');
+});
+
+Route::get('/admin/m/prices', function () {
+    return view('admin.admin-m-prices');
+});
+
+
+/*
+|------------------------------------------------------------------------------------
 | GUEST
 |------------------------------------------------------------------------------------
 */
