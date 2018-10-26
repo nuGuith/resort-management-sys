@@ -1,4 +1,4 @@
-@extends('admin.layout.default')
+@extends('admin.default')
 
 @section('page-header')
     Admin <small>DASHBOARD</small>

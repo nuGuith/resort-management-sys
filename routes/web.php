@@ -9,33 +9,22 @@ Auth::routes();
 |------------------------------------------------------------------------------------
 */
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
-    //Route::get('/', 'DashboardController@index')->name('dash');
+    Route::get('/', 'DashboardController@index')->name('dash');
     Route::get('/', 'DashboardController@welcome')->name('welcome');
-    Route::resource('_404', '_404Controller');
-    Route::resource('_500', '_500Controller');
-    Route::resource('basic-table', 'BasicTableController');
-    Route::resource('blank', 'BlankController');
-    Route::resource('buttons', 'ButtonsController');
-    Route::resource('calendar', 'CalendarController');
-    Route::resource('charts', 'ChartsController');
-    Route::resource('chat', 'ChatController');
-    Route::resource('compose', 'ComposeController');
-    Route::resource('datatable', 'DatatableController');
-    Route::resource('email', 'EmailController');
-    Route::resource('forms', 'FormsController');
-    Route::resource('google-maps', 'GoogleMapsController');
-    Route::resource('signin', 'SigninController');
-    Route::resource('signup', 'SignupController');
-    Route::resource('ui', 'UIController');
-    Route::resource('vector-maps', 'VectorMapsController');
-    Route::resource('users', 'UserController');
+    Route::resource('reservations', 'ReservationController');
+    Route::resource('sales', 'SalesController');
+    Route::resource('/m/rooms', 'RoomsController');
+    Route::resource('/m/resort', 'ResortController');
+    Route::resource('/m/rates', 'PricesController');
+    Route::resource('/m/prices', 'PricesController');
+    Route::resource('/m/users', 'UserController');
 });
 
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:0']], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
-    Route::get('/schedule', 'DashboardController@schedule')->name('schedule');
+    Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
     Route::resource('users', 'UserController');
 });
@@ -52,10 +41,10 @@ Route::get('/', function () {
 */
 
 Route::get('/admin/dashboard', function () {
-    return view('admin.admin-dashboard');
+    return view('admin.dashboard.index');
 });
 
-Route::get('/admin/schedule', function () {
+/* Route::get('/admin/schedule', function () {
     return view('admin.admin-schedule');
 });
 
@@ -81,9 +70,8 @@ Route::get('/admin/m/resort', function () {
 
 Route::get('/admin/m/prices', function () {
     return view('admin.admin-m-prices');
-});
+}); */
 
-Route::resource('/admin/reservation-prices', 'PricesController');
 
 
 /*
@@ -92,7 +80,7 @@ Route::resource('/admin/reservation-prices', 'PricesController');
 |------------------------------------------------------------------------------------
 */
 
-Route::get('/guest/welcome', function () {
+/* Route::get('/guest/welcome', function () {
     return view('guest.guest-welcome');
 });
 
@@ -114,4 +102,4 @@ Route::get('/guest/reservation', function () {
 
 Route::get('/guest/new/reservation', function () {
     return view('guest.guest-new-reservation');
-});
+}); */

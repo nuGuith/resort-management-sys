@@ -9,7 +9,7 @@ use Redirect;
 
 use App\Rooms; //name ng model
 
-class RoomsController extends Controller
+class RatesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,7 @@ class RoomsController extends Controller
      */
     public function index()
     {
-        $rooms = DB::table('room')->get();
-        return view ('admin.rooms.index', compact('rooms'));
+        return view ('admin.rates.index');
     }
 
     /**

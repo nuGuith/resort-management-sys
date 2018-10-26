@@ -19,8 +19,7 @@ class PricesController extends Controller
     public function index()
     {
         $prices = DB::table('reservation_type')->get();
-        dd($prices);
-        //return view ('admin.admin-m-prices', compact('prices'));
+        return view ('admin.reservation_rates.index', compact('prices'));
     }
 
     /**
