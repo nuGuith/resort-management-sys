@@ -10,7 +10,6 @@ Auth::routes();
 */
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
-    Route::get('/', 'DashboardController@welcome')->name('welcome');
     Route::resource('reservations', 'ReservationsController');
     Route::resource('sales', 'SalesController');
     Route::resource('/m/rooms', 'RoomsController');
