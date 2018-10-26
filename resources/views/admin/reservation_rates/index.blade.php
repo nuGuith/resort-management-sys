@@ -1,4 +1,4 @@
-@extends('admin.layout.default')
+@extends('layouts.master')
 
 @section('page-header')
     Admin <small>PRICES</small>
@@ -52,8 +52,7 @@
                </button>
             </div>
 
-            {!! Form::open(array('id' => 'addForm', 'url' => '/admin/reservation-prices', 'action' => 'PricesController@store',
-                    'method' => 'POST')) !!}
+            {!! Form::open(array('id' => 'addForm', 'action' => 'PricesController@store', 'method' => 'POST')) !!}
                 <div class="modal-body">
 
                     <div class="form-group">
@@ -64,8 +63,7 @@
                         <input id="reservation-rate" type="number" class="form-control" name="reservation_rate" value="" required="" autofocus=""><br>
 
                         <label for="reservation-desc" class="text-normal text-dark">Reservation Description:</label><br>
-                        <textarea id="reservation-desc"class="form-control" name="reservation_desc" value="" required="" autofocus="">
-                        </textarea><br>
+                        <textarea id="reservation-desc" class="form-control" name="reservation_desc" required="" autofocus=""></textarea><br>
 
                         <div align="right">
                             

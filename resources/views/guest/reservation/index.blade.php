@@ -1,4 +1,4 @@
-@extends('guest.layout.default')
+@extends('layouts.master')
 
 @section('page-header')
     Guest <small>RESERVATION</small>
@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="mB-20">
-        <a href="{{ url('/guest/new/reservation') }}" class="btn btn-info">
+        <a href="{{ route(ADMIN . '.reservation.create') }}" class="btn btn-info">
         	New Reservation
         </a>
     </div>

@@ -1,4 +1,4 @@
-@extends('admin.layout.default')
+@extends('layouts.master')
 
 @section('page-header')
     Admin <small>SALES</small>

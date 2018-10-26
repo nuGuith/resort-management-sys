@@ -1,4 +1,4 @@
-@extends('guest.layout.default')
+@extends('layouts.master')
 
 @section('page-header')
     Guest <small>THE RESORT</small>

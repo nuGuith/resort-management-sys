@@ -8,11 +8,11 @@ class ReservationController extends Controller
 {
     public function index()
     {
-        return view('admin.reservations.index');
+        return view('guest.reservation.index');
     }
 
     public function create()
     {
-        return view('admin.reservations.create');
+        return view('guest.reservation.create');
     }
 }

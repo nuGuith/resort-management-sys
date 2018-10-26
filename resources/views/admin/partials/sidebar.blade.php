@@ -6,13 +6,8 @@
 				<div class="peer peer-greed">
 					<a class='sidebar-link td-n' href="{{ route(ADMIN . '.dash') }}">
 						<div class="peers ai-c fxw-nw">
-							<div class="peer">
-								<div class="logo">
-									<img src="/images/logo.png" alt="">
-								</div>
-							</div>
 							<div class="peer peer-greed">
-								<h5 class="lh-1 mB-0 logo-text">Carina's Place</h5>
+								<img src="/images/resort-logo2.png" alt="">
 							</div>
 						</div>
 					</a>

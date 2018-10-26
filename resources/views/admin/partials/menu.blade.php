@@ -71,22 +71,6 @@
 </li>
 @elseif ( auth()->user()->role === 0)
 <li class="nav-item">
-    <a class='sidebar-link' href="{{ route(ADMIN . '.resort') }}">
-        <span class="icon-holder">
-          <i class="c-purple-500 ti-map"></i>
-        </span>
-        <span class="title">The Resort</span>
-    </a>
-</li>
-<li class="nav-item">
-    <a class='sidebar-link' href="{{ route(ADMIN . '.rooms') }}">
-        <span class="icon-holder">
-          <i class="c-blue-500 ti-home"></i>
-        </span>
-        <span class="title">Rooms</span>
-    </a>
-</li>
-<li class="nav-item">
     <a class='sidebar-link' href="{{ route(ADMIN . '.schedule.index') }}">
         <span class="icon-holder">
           <i class="c-deep-orange-500 ti-calendar"></i>
@@ -100,6 +84,22 @@
           <i class="c-light-blue-500 ti-pencil"></i>
         </span>
         <span class="title">Reservation</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class='sidebar-link' href="{{ route(ADMIN . '.resort') }}">
+        <span class="icon-holder">
+          <i class="c-purple-500 ti-map"></i>
+        </span>
+        <span class="title">The Resort</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class='sidebar-link' href="{{ route(ADMIN . '.rooms') }}">
+        <span class="icon-holder">
+          <i class="c-blue-500 ti-home"></i>
+        </span>
+        <span class="title">Rooms</span>
     </a>
 </li>
 <li class="nav-item">

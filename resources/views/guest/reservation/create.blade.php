@@ -1,4 +1,4 @@
-@extends('guest.layout.default')
+@extends('layouts.master')
 
 @section('page-header')
     Guest <small>NEW RESERVATION</small>
@@ -10,15 +10,15 @@
             <div class="form-group">
                 <label for="reservation-type" class="text-normal text-dark">Reservation Type:</label>
                 <select id="reservation-type" class="form-control" name="reservation-type" value="" required="" autofocus="">
-                    <option></option>
+                    <option>&nbsp;</option>
                     <option>Event</option>
                     <option>Stay-In</option>
                     <option>Pool Reservation</option>
                 </select><br>
 
                 <label for="rooms" class="text-normal text-dark">Rooms:</label>
-                <select multiple="" id="rooms" class="form-control" name="rooms" value="" required="" autofocus="">
-                    <option> </option>
+                <select multiple="" id="rooms" class="form-control select2" name="rooms" value="" required="" autofocus="">
+                    <option>&nbsp;</option>
                     <option>Room 1</option>
                     <option>Room 2</option>
                     <option>Room 3</option>

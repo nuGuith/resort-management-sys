@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $items = User::latest('updated_at')->get();
+        $items = User::latest('updated_at')->where('role', 10)->get();
 
         return view('admin.users.index', compact('items'));
     }

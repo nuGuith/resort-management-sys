@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Redirect;
 
-use App\Rooms; //name ng model
+use App\Resort; //name ng model
 
 class ResortController extends Controller
 {
@@ -18,7 +18,8 @@ class ResortController extends Controller
      */
     public function index()
     {
-        return view ('admin.resort.index');
+        $areas = DB::table('area')->get();
+        return view ('admin.resort.index', compact('areas'));
     }
 
     /**
@@ -40,17 +41,16 @@ class ResortController extends Controller
     public function store(Request $request)
     {
         DB::beginTransaction();
-        Rooms::create
+        Resort::create
         ([
-            'room_name' => trim($request->room_type),
-            'room_rate' => trim($request->room_rate),
-            'description' => trim($request->room_desc),
-            'image' => trim($request->room_pic),
+            'area_name' => trim($request->area_name),
+            'description' => trim($request->area_desc),
+            'image' => trim($request->area_pic),
         ]);
 
         DB::commit();
 
-        return redirect('/admin/m/rooms');
+        return redirect('/admin/m/resort');
     }
 
     /**

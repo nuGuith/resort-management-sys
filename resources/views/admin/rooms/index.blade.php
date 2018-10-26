@@ -1,4 +1,4 @@
-@extends('admin.layout.default')
+@extends('layouts.master')
 
 @section('page-header')
     Admin <small>ROOMS</small>
@@ -53,7 +53,7 @@
                </button>
             </div>
             
-            {!! Form::open(array('id' => 'addForm', 'url' => '/admin/rooms', 'action' => 'RoomsController@store', 'method' => 'POST')) !!}
+            {!! Form::open(array('id' => 'addForm', 'action' => 'RoomsController@store', 'method' => 'POST')) !!}
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="room-type" class="text-normal text-dark">Room Type:</label><br>
@@ -63,8 +63,7 @@
                         <input id="room-rate" type="number" class="form-control" name="room_rate" value="" required="" autofocus=""><br>
 
                         <label for="room-desc" class="text-normal text-dark">Room Description:</label>
-                        <textarea id="room-desc"class="form-control" name="room_desc" value="" required="" autofocus="">
-                        </textarea><br>
+                        <textarea id="room-desc"class="form-control" name="room_desc" value="" required="" autofocus=""></textarea><br>
                     </div>
 
                     <div class="form-group">
