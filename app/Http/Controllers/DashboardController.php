@@ -26,8 +26,16 @@ class DashboardController extends Controller
         return view('guest.rooms.index');
     }
 
+    public function messages()
+    {
+        return view('guest.messages.index');
+    }
+
     public function schedule()
     {
-        return view('guest.schedule.index');
+        if(auth()->user()->role() == 10)
+            return view('admin.schedule.index');
+        if(auth()->user()->role() == 0)
+            return view('guest.schedule.index');
     }
 }
