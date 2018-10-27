@@ -18,7 +18,9 @@ class RoomsController extends Controller
      */
     public function index()
     {
-        $rooms = DB::table('room')->get();
+        $rooms = DB::table('room')
+            ->where('isDeleted', 0)
+            ->get();
         return view ('admin.rooms.index', compact('rooms'));
     }
 
@@ -73,7 +75,8 @@ class RoomsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $room = Rooms::findOrFail($id);
+        return response()->json(compact('room'));
     }
 
     /**
@@ -83,9 +86,12 @@ class RoomsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('room')
+            ->where('id', $request->room_id)
+            ->update(['room_name'=>$request->room_type, 'room_rate'=>$request->room_rate, 'description'=>$request->room_desc]);
+            return redirect('/admin/m/rooms');
     }
 
     /**
@@ -96,7 +102,9 @@ class RoomsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('room')
+            ->where('id', $id)
+            ->update(['isDeleted' => 1]);
     }
 }
 

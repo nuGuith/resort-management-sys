@@ -1,3 +1,6 @@
+@extends('layouts.plain')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -19,7 +22,7 @@
          <div id="container-bg">
 
             <div style="margin-right: 4%" align="right">
-               <a href="" class="btn btn-link" data-toggle="modal" data-target="#modalLogin">Login</a>
+               <a href="login" class="btn btn-link">Login</a>
                <a>|</a>
                <a href="/register" class="btn btn-link">Create new account</a>
             </div>
@@ -69,6 +72,10 @@
                      <span class="sr-only">Next</span>
                   </a>
                </div>
+            </div>
+
+            <div class="peer" style="" align="center">
+               <img id="image-message" src="{{ asset('images/resort/message.png') }}">
             </div>
 
             <div class="peer">
@@ -168,3 +175,4 @@
    </style>
 
 </html>
+@endsection

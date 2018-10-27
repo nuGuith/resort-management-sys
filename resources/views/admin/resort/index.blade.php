@@ -32,8 +32,8 @@
                         <td>{{ $area -> description }}</td>
                         <td><a href="" class="btn cur-p btn-info" data-toggle="modal" data-target="#modalViewImage">View Image</a></td>
                         <td>
-                        	<a href="" class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"><i class="ti-pencil"></i></a>
-                        	<a href="" class="td-n c-red-500 cH-blue-500 fsz-md p-5" data-id="{{ $area -> id}}"><i class="ti-trash"></i></a>
+                        	<a onClick="editModal({{ $area->id }})" class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"><i class="ti-pencil"></i></a>
+                            <a onClick="deleteRow({{ $area->id }})" class="td-n c-red-500 cH-blue-500 fsz-md p-5"><i class="ti-trash"></i></a>
                         </td>
                     </tr>
                 @endforeach
@@ -41,6 +41,42 @@
         
         </table>
     </div>
+
+    <!-- MODAL FOR EDITING AREA -->
+    <div class="modal fade" id="modalEditArea" tabindex="-1" role="dialog" aria-labelledby="modalEditAreaLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title" id="modalEditAreaLabel">Edit Area Details</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                   </button>
+                </div>
+                {!! Form::open(array('id' => 'editForm', 'url' => 'admin/m/resort', 'action' => 'ResortController@update', 'method' => 'PUT')) !!}
+                    <div class="modal-body">
+
+                       <div class="form-group">
+                            <label for="area-name" class="text-normal text-dark">Area Name:</label><br>
+                            <input id="area-name" type="text" class="form-control" name="area_name" value="" required="" autofocus=""><br>
+
+                            <label for="area-desc" class="text-normal text-dark">Area Description:</label>
+                            <textarea id="area-desc"class="form-control" name="area_desc" value="" required="" autofocus=""></textarea><br>
+
+                            <label for="area-pic" class="text-normal text-dark">Add Picture:</label><br>
+                            <input id="area-pic" type="text" class="form-control" name="area_pic" value="" autofocus=""><br>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn cur-p btn-success">SAVE</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">CANCEL</button>
+                        <input type="hidden" id="area-id" name="area_id">
+                    </div>
+                {!! Form::close() !!}
+             </div>
+          </div>
+       </div>
+    <!-- END OF MODAL -->
 
     <!-- MODAL FOR ADDING AREA -->
         <div class="modal fade" id="modalAddArea" tabindex="-1" role="dialog" aria-labelledby="modalAddAreaLabel" aria-hidden="true">
@@ -52,7 +88,7 @@
                       <span aria-hidden="true">&times;</span>
                    </button>
                 </div>
-                {!! Form::open(array('id' => 'addForm', 'url' => '/admin/resort', 'action' => 'ResortController@store', 'method' => 'POST')) !!}
+                {!! Form::open(array('id' => 'addForm', 'url' => '/admin/m/resort', 'action' => 'ResortController@store', 'method' => 'POST')) !!}
                     <div class="modal-body">
 
                        <div class="form-group">
@@ -99,5 +135,35 @@
       </div>
    </div>
    <!-- END OF MODAL -->
+
+   <script>
+        function editModal(id)
+        {
+            $.ajax({
+                type: "GET",
+                url: "/admin/m/resort/" + id + "/edit",
+                dataType: "JSON",
+                success:function(data)
+                {
+                    $("#area-name").val(data.area.area_name);
+                    $("#area-desc").val(data.area.description);
+                    $("#area-id").val(id);
+                }
+            });
+            $('#modalEditArea').modal('show');
+        }
+
+        function deleteRow(id)
+        {
+            $.ajax({
+                type: "GET",
+                url: "/admin/m/resort/" + id + "/delete",
+                success:function(data)
+                {
+                    location.reload(true);
+                }
+            });
+        }
+   </script>
 
 @endsection

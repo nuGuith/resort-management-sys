@@ -10,13 +10,18 @@ Auth::routes();
 */
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
-    Route::get('/', 'DashboardController@welcome')->name('welcome');
     Route::resource('reservations', 'ReservationsController');
     Route::resource('sales', 'SalesController');
     Route::resource('/m/rooms', 'RoomsController');
+    Route::put('/m/rooms', 'RoomsController@update');
+    Route::get('/m/rooms/{id}/delete', 'RoomsController@destroy');
     Route::resource('/m/resort', 'ResortController');
+    Route::put('/m/resort', 'ResortController@update');
+    Route::get('/m/resort/{id}/delete', 'ResortController@destroy');
     Route::resource('/m/rates', 'PricesController');
     Route::resource('/m/prices', 'PricesController');
+    Route::put('/m/prices', 'PricesController@update');
+    Route::get('/m/prices/{id}/delete', 'PricesController@destroy');
     Route::resource('/m/users', 'UserController');
 });
 

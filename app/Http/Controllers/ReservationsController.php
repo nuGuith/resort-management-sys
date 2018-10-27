@@ -11,8 +11,9 @@ class ReservationsController extends Controller
         return view('admin.reservations.index');
     }
 
-    public function create()
+    public function show($id)
     {
-        return view('admin.reservations.create');
+        
+        return view('admin.reservations.show');
     }
 }

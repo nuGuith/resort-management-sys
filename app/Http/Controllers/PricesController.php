@@ -18,7 +18,9 @@ class PricesController extends Controller
      */
     public function index()
     {
-        $prices = DB::table('reservation_type')->get();
+        $prices = DB::table('reservation_type')
+            ->where('isDeleted', 0)
+            ->get();
         return view ('admin.reservation_rates.index', compact('prices'));
     }
 
@@ -44,12 +46,12 @@ class PricesController extends Controller
         Prices::create
         ([
             'name' => trim($request->reservation_type),
-            'description' => trim($request->reservation_desc),
             'reservation_rate' => trim($request->reservation_rate),
+            'description' => trim($request->reservation_desc),
         ]);
 
         DB::commit();
-
+        
         return redirect('/admin/m/prices');
     }
 
@@ -72,7 +74,8 @@ class PricesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $price = Prices::findOrFail($id);
+        return response()->json(compact('price'));
     }
 
     /**
@@ -82,9 +85,12 @@ class PricesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('reservation_type')
+            ->where('id', $request->price_id)
+            ->update(['name'=>$request->reservation_type, 'reservation_rate'=>$request->reservation_rate, 'description'=>$request->reservation_desc]);
+            return redirect('/admin/m/prices');
     }
 
     /**
@@ -95,7 +101,9 @@ class PricesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('reservation_type')
+            ->where('id', $id)
+            ->update(['isDeleted' => 1]);
     }
 }
 

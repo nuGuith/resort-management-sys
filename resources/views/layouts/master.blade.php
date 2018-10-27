@@ -53,6 +53,9 @@
     </div>
 
     <script src="{{ mix('/js/app.js') }}"></script>
+    <script type="text/javascript" src="{{URL('js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{URL('js/components.js')}}"></script>
+    <script type="text/javascript" src="{{URL('js/custom.js')}}"></script>
 
     @yield('js')
 

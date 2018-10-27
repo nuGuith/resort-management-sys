@@ -23,7 +23,7 @@
                 <tr>
                     <td></td>
                     <td></td>
-                    <td><a href="{{ url('/admin/view/reservation') }}" class="btn cur-p btn-info">View</a></td>
+                    <td><a href="{{ route(ADMIN . '.reservations.show', 1) }}" class="btn cur-p btn-info">View</a></td>
                     <td></td>
                     <td></td>
                     <td>

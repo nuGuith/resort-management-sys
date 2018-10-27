@@ -14,5 +14,6 @@ class Resort extends Model
         'area_name',
         'description',
         'image',
+        'isDeleted',
     ];
 }
