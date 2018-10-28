@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -13,7 +13,7 @@ class DashboardController extends Controller
         if(Auth::user()->role === 10)
             return view('admin.dashboard.index');
         else
-            return view('admin.schedule.index');
+            return view('guest.schedule.index');
     }
 
     public function welcome()
