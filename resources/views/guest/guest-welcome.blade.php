@@ -74,6 +74,10 @@
                </div>
             </div>
 
+            <div class="peer" style="" align="center">
+               <img id="image-message" src="{{ asset('images/resort/message.png') }}">
+            </div>
+
             <div class="peer">
                <div>
                   <img id="image-vector" src="{{ asset('images/resort/house-vector.png') }}">

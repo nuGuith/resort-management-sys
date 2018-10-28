@@ -10,23 +10,31 @@ Auth::routes();
 */
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
     Route::get('/dashboard/home', 'DashboardController@index')->name('dashboard');
-    Route::get('/schedule', 'DashboardController@index')->name('schedule.index');
+    Route::get('/schedule', 'DashboardController@schedule')->name('schedule.index');
+    Route::resource('messages', 'MessagesController');
     Route::resource('reservations', 'ReservationsController');
     Route::resource('sales', 'SalesController');
     Route::resource('/m/rooms', 'RoomsController');
+    Route::put('/m/rooms', 'RoomsController@update');
+    Route::get('/m/rooms/{id}/delete', 'RoomsController@destroy');
     Route::resource('/m/resort', 'ResortController');
-    Route::resource('/m/rates', 'PricesController');
+    Route::put('/m/resort', 'ResortController@update');
+    Route::get('/m/resort/{id}/delete', 'ResortController@destroy');
     Route::resource('/m/prices', 'PricesController');
+    Route::put('/m/prices', 'PricesController@update');
+    Route::get('/m/prices/{id}/delete', 'PricesController@destroy');
     Route::resource('/m/users', 'UserController');
 });
 
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:0']], function () {
-    Route::get('/', 'ScheduleController@index')->name('dash');
+    Route::get('/', 'DashboardController@index')->name('dash');
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
-    Route::resource('messages', 'MessagesController');
+    Route::get('/viewrooms', 'DashboardController@viewrooms')->name('viewrooms');
+    Route::resource('message', 'MessageController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
+    Route::get('/reservation/{id}/delete', 'ReservationController@destroy');
     Route::resource('users', 'UserController');
 });
 

@@ -18,9 +18,9 @@
         </ul>
         <ul class="nav-right">
             <li class="notifications dropdown">
-                <span class="counter bgc-red">3</span>
+                <!-- <span class="counter bgc-red">3</span> -->
                 <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
-                    <i class="ti-bell"></i>
+                    Notifications <i class="c-blue-500 ti-bell"></i>
                 </a>
 
                 <ul class="dropdown-menu">
@@ -92,11 +92,11 @@
                     </li>
                 </ul>
             </li>
-            <li class="notifications dropdown">
-                <span class="counter bgc-blue">3</span>
-                <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
+            <li class="notifications dropdown"><!-- 
+                <span class="counter bgc-blue">3</span> -->
+                <!-- <a href="" class="dropdown-toggle no-after" data-toggle="dropdown">
                     <i class="ti-email"></i>
-                </a>
+                </a> -->
 
                 <ul class="dropdown-menu">
                     <li class="pX-20 pY-15 bdB">
@@ -191,20 +191,20 @@
                     </div>
                 </a>
                 <ul class="dropdown-menu fsz-sm">
-                    <li>
+                    <!-- <li>
                         <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                             <i class="ti-settings mR-10"></i>
                             <span>Setting</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                        <a href="{{ route(ADMIN . '.users.edit', auth()->user()->id) }}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                             <i class="ti-user mR-10"></i>
                             <span>Profile</span>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                        <a href="{{ auth()->user()->role == 10 ? route(ADMIN . '.messages.index') : route(ADMIN . '.message.index')}}" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
                             <i class="ti-email mR-10"></i>
                             <span>Messages</span>
                         </a>

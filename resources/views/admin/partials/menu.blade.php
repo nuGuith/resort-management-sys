@@ -8,6 +8,14 @@
     </a>
 </li>
 <li class="nav-item">
+    <a class='sidebar-link' href="{{ route(ADMIN . '.messages.index') }}">
+        <span class="icon-holder">
+          <i class="c-green-500 ti-email"></i>
+        </span>
+        <span class="title">Messages</span>
+    </a>
+</li>
+<li class="nav-item">
    <a class='sidebar-link' href="{{ route(ADMIN . '.schedule.index') }}">
       <span class="icon-holder">
          <i class="c-orange-500 ti-calendar"></i>
@@ -70,8 +78,8 @@
     </a>
 </li>
 @elseif ( auth()->user()->role === 0)
-<li class="nav-item">
-    <a class='sidebar-link' href="{{ route(ADMIN . '.messages.index') }}">
+<li class="nav-item mT-30">
+    <a class='sidebar-link' href="{{ route(ADMIN . '.message.index') }}">
         <span class="icon-holder">
           <i class="c-green-500 ti-email"></i>
         </span>

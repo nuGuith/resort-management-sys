@@ -18,7 +18,9 @@ class ResortController extends Controller
      */
     public function index()
     {
-        $areas = DB::table('area')->get();
+        $areas = DB::table('area')
+            ->where('isDeleted', 0)
+            ->get();
         return view ('admin.resort.index', compact('areas'));
     }
 
@@ -72,7 +74,8 @@ class ResortController extends Controller
      */
     public function edit($id)
     {
-        //
+        $area = Resort::findOrFail($id);
+        return response()->json(compact('area'));
     }
 
     /**
@@ -82,9 +85,12 @@ class ResortController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('area')
+            ->where('id', $request->area_id)
+            ->update(['area_name'=>$request->area_name, 'description'=>$request->area_desc]);
+            return redirect('/admin/m/resort');
     }
 
     /**
@@ -95,7 +101,9 @@ class ResortController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('area')
+            ->where('id', $id)
+            ->update(['isDeleted' => 1]);
     }
 }
 

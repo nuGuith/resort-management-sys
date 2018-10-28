@@ -4,16 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Resort extends Model
+class RoomReservation extends Model
 {
     public $timestamps = true;
-    protected $table = 'area';
+    protected $table = 'reservation_room';
     //protected $primaryKey = 'reservationID';
     protected $fillable =
     [
-        'area_name',
-        'description',
-        'image',
-        'isDeleted',
+        'reservation_id',
+        'room_id',
     ];
 }
