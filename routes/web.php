@@ -9,7 +9,9 @@ Auth::routes();
 |------------------------------------------------------------------------------------
 */
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:10']], function () {
-    Route::get('/', 'DashboardController@index')->name('dash');
+    Route::get('/dashboard/home', 'DashboardController@index')->name('dashboard');
+    Route::get('/schedule', 'DashboardController@schedule')->name('schedule.index');
+    Route::resource('messages', 'MessagesController');
     Route::resource('reservations', 'ReservationsController');
     Route::resource('sales', 'SalesController');
     Route::resource('/m/rooms', 'RoomsController');
@@ -26,9 +28,10 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
 });
 
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:0']], function () {
-    Route::get('/', 'ScheduleController@index')->name('dash');
+    Route::get('/', 'DashboardController@index')->name('dash');
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
+Route::resource('message', 'MessageController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
     Route::get('/reservation/{id}/delete', 'ReservationController@destroy');
