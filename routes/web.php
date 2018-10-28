@@ -34,6 +34,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::resource('message', 'MessageController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
+    Route::get('/reservation/{id}/delete', 'ReservationController@destroy');
     Route::resource('users', 'UserController');
 });
 

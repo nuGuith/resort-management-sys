@@ -27,20 +27,36 @@
             </thead>
             
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                    	<a href="" class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"><i class="ti-pencil"></i></a>
-                    	<a href="" class="td-n c-red-500 cH-blue-500 fsz-md p-5"><i class="ti-trash"></i></a>
-                    </td>
-                </tr>
+                @foreach($reservations as $reservation)
+                    
+                    <tr>
+                        <td>{{ $reservation -> id }}</td>
+                        <td>{{ $reservation -> reservation_type_id }}</td>
+                        <td>{{ $reservation -> no_of_rooms }}</td>
+                        <td>{{ $reservation -> status }}</td>
+                        <td>{{ $reservation->start_datetime}} to {{$reservation->end_datetime }}</td>
+                        <td>
+                            <a href="" class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"><i class="ti-pencil"></i></a>
+                            <a onClick="deleteRow({{ $reservation->id }})" class="td-n c-red-500 cH-blue-500 fsz-md p-5"><i class="ti-trash"></i></a>
+                        </td>
+                @endforeach
+                    </tr>
             </tbody>
         
         </table>
     </div>
 
+    <script>
+        function deleteRow(id)
+        {
+            $.ajax({
+                type: "GET",
+                url: "/admin/reservation/" + id + "/delete",
+                success:function(data)
+                {
+                    location.reload(true);
+                }
+            });
+        }
+   </script>
 @endsection
