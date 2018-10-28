@@ -16,15 +16,40 @@
       <div class="container">
 
          <div class="peer" id="top">
-               <img src="{{ asset('images/resort-logo2.png') }}">
+            <div class="row" style="margin-bottom:40px;">
+              <div class="col-lg-3" style="margin-bottom:20px;">
+                <img src="{{ asset('images/resort-logo2.png') }}">
+              </div>
+              <div class="col-lg-4"></div>
+              <div class="col-lg-3" style="margin-top:20px; margin-right:-40px;">
+              <h4>
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcarinas-place.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" data-layout="button" data-size="large" data-mobile-iframe="true" style="border: 1px solid #2196F3; border-radius:4px; padding:5px;">
+                  <span class="icon-holder">
+                    <i class="c-blue-500 ti-facebook"></i>
+                  </span>
+                  <span class="title">Share us on Facebook!</span>
+                </a>
+              </h4>
+              </div>
+              <div class="col-lg-2" style="margin-top:20px;">
+              <h4>
+                <a target="_blank" href="https://twitter.com/intent/tweet?text=Book%with%us%20Now!" class="fb-xfbml-parse-ignore" data-layout="button" data-size="large" data-mobile-iframe="true" style="border: 1px solid #2196F3; border-radius:4px; padding:5px;">
+                  <span class="icon-holder">
+                    <i class="c-lightblue-500 ti-twitter-alt"></i>
+                  </span>
+                  <span class="title">Tweet with us!</span>
+                </a>
+              </h4>
+              </div>
+            <div>
          </div>
 
          <div id="container-bg">
 
             <div style="margin-right: 4%" align="right">
-               <a href="login" class="btn btn-link">Login</a>
-               <a>|</a>
-               <a href="/register" class="btn btn-link">Create new account</a>
+                <a href="login" class="btn btn-link">Login</a>
+                <a>|</a>
+                <a href="/register" class="btn btn-link">Create new account</a>
             </div>
 
             <div style="margin-right: 5%; margin-left: 5%">
@@ -97,6 +122,34 @@
          </div>
       </div>
    </body>
+        <script>
+          //Facebook
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=1996791573701166&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          
+          //Twitter
+            window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+
+              return t;
+            }(document, "script", "twitter-wjs"));
+        </script>
 
    <!-- MODAL -->
    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel" aria-hidden="true">
