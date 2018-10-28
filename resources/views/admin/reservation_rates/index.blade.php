@@ -19,6 +19,8 @@
                     <th>Reservation Type</th>
                     <th>Reservation Rate</th>
                     <th>Reservation Description</th>
+                    <th>Inclusive Guests</th>
+                    <th>Rate per Person</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -30,6 +32,8 @@
                         <td>{{ $price -> name }}</td>
                         <td>{{ $price -> reservation_rate }}</td>
                         <td>{{ $price -> description }}</td>
+                        <td>{{ $price -> max_guest }}</td>
+                        <td>{{ $price -> price_per_head }}</td>
                         <td>
                             <a onClick="editModal({{ $price->id }})" class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"><i class="ti-pencil"></i></a>
                             <a onClick="deleteRow({{ $price->id }})" class="td-n c-red-500 cH-blue-500 fsz-md p-5"><i class="ti-trash"></i></a>
@@ -64,6 +68,12 @@
 
                         <label for="reservation-desc" class="text-normal text-dark">Reservation Description:</label><br>
                         <textarea id="reservation-desc" class="form-control" name="reservation_desc" required="" autofocus=""></textarea><br>
+
+                        <label for="rate-per-head" class="text-normal text-dark">Rate per Head:</label><br>
+                        <input id="rate-per-head" type="number" class="form-control" name="rate_per_head" value="" required="" autofocus=""><br>
+
+                        <label for="max-guest" class="text-normal text-dark">Inclusive Max. No. of Guests</label><br>
+                        <input id="max-guest" type="number" class="form-control" name="max_guest" value="" required="" autofocus=""><br>
 
                         <div align="right">
                             
@@ -105,6 +115,12 @@
                         <label for="reservation-desc" class="text-normal text-dark">Reservation Description:</label><br>
                         <textarea id="reservation-desc" class="form-control" name="reservation_desc" required="" autofocus=""></textarea><br>
 
+                        <label for="rate-per-head" class="text-normal text-dark">Rate per Head:</label><br>
+                        <input id="rate-per-head" type="number" class="form-control" name="rate_per_head" value="" required="" autofocus=""><br>
+
+                        <label for="max-guest" class="text-normal text-dark">Inclusive Max. No. of Guests</label><br>
+                        <input id="max-guest" type="number" class="form-control" name="max_guest" value="" required="" autofocus=""><br>
+
                         <div align="right">
                             
                         </div>
@@ -132,6 +148,8 @@
                     $("#reservation-type").val(data.price.name);
                     $("#reservation-rate").val(data.price.reservation_rate);
                     $("#reservation-desc").val(data.price.description);
+                    $("#rate-per-head").val(data.price.price_per_head);
+                    $("#max-guest").val(data.price.max_guest);
                     $("#price-id").val(id);
                 }
             });

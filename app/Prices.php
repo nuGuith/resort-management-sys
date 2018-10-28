@@ -14,5 +14,14 @@ class Prices extends Model
         'name',
         'description',
         'reservation_rate',
+        'max_guest',
+        'price_per_head',
     ];
+
+    public function get_reservation_type(){
+        $rtype = DB::table('reservation_type')
+            ->where('isDeleted', 0)
+            ->get();
+        return $rtype;
+    }
 }

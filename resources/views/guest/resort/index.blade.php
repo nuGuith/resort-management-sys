@@ -6,6 +6,12 @@
 
 @section('content')
 
+	<!-- <div class="mB-20"> 
+        <a href="{{ route(ADMIN . '.reservation.create') }}" class="btn btn-info">
+        	View All Areas
+        </a>
+    </div> -->
+
    <table style="width: 90%">
    		<tr>
 	        <td style="width: 45%">
