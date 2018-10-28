@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
         }
         require_once base_path('resources/macros/form.php');
         Schema::defaultStringLength(191);
+        \URL::forceScheme('https');
     }
 
     /**
