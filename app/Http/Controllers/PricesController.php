@@ -48,6 +48,8 @@ class PricesController extends Controller
             'name' => trim($request->reservation_type),
             'reservation_rate' => trim($request->reservation_rate),
             'description' => trim($request->reservation_desc),
+            'max_guest' => trim($request->max_guest),
+            'price_per_head' => trim($request->rate_per_head),
         ]);
 
         DB::commit();
@@ -89,7 +91,11 @@ class PricesController extends Controller
     {
         DB::table('reservation_type')
             ->where('id', $request->price_id)
-            ->update(['name'=>$request->reservation_type, 'reservation_rate'=>$request->reservation_rate, 'description'=>$request->reservation_desc]);
+            ->update(['name'=>$request->reservation_type,
+                'reservation_rate'=>$request->reservation_rate,
+                'description'=>$request->reservation_desc,
+                'max_guest'=>$request->max_guest,
+                'price_per_head'=>$request->rate_per_head]);
             return redirect('/admin/m/prices');
     }
 

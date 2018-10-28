@@ -31,6 +31,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
+    Route::get('/reservation/{id}/delete', 'ReservationController@destroy');
     Route::resource('users', 'UserController');
 });
 
