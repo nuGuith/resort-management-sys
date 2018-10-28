@@ -1,4 +1,4 @@
-@extends('admin.layout.default')
+@extends('layouts.master')
 
 @section('page-header')
     Admin <small>SCHEDULE</small>
@@ -6,7 +6,7 @@
 
 @section('content')
 
-   	<div class="col-md-8">
+   	<div class="col-md-12">
         <div id='full-calendar'></div>
     </div>
 
