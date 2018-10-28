@@ -19,7 +19,6 @@
                     <th>ID</th>
                     <th>Room Type</th>
                     <th>Room Rate</th>
-                    <th style="width: 10%">Picture</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -30,7 +29,7 @@
                         <td>{{ $room -> id }}</td>
                         <td>{{ $room -> room_name }}</td>
                         <td>{{ $room -> room_rate }}</td>
-                        <td><a href="" class="btn cur-p btn-info" data-toggle="modal" data-target="#modalViewImage">View Image</a></td>
+                        <!-- <td><a href="" class="btn cur-p btn-info" data-toggle="modal" data-target="#modalViewImage">View Image</a></td> -->
                         <td>
                         	<a onCLick="editModal({{ $room->id }})" class="td-n c-deep-purple-500 cH-blue-500 fsz-md p-5"><i class="ti-pencil"></i></a>
                         	<a onClick="deleteRow({{ $room->id }})" class="td-n c-red-500 cH-blue-500 fsz-md p-5"><i class="ti-trash"></i></a>
@@ -66,10 +65,10 @@
                         <textarea id="room-desc"class="form-control" name="room_desc" value="" required="" autofocus=""></textarea><br>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="room-pic" class="text-normal text-dark">Add Picture:</label><br>
                         <input id="room-pic" type="text" class="form-control" name="room_pic" value="" autofocus=""><br>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button class="btn cur-p btn-success">SAVE</button>
@@ -106,10 +105,10 @@
                         <textarea id="room-desc"class="form-control" name="room_desc" value="" required="" autofocus=""></textarea><br>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="room-pic" class="text-normal text-dark">Add Picture:</label><br>
                         <input id="room-pic" type="text" class="form-control" name="room_pic" value="" autofocus=""><br>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button class="btn cur-p btn-success">SAVE</button>

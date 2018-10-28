@@ -6,6 +6,12 @@
 
 @section('content')
 
+	<div class="mB-20"> 
+        <a href="{{ url('/admin/viewrooms') }}" class="btn btn-info">
+        	VIEW ROOMS
+        </a>
+    </div>
+
    <table>
    		<tr>
 	        <td style="width: 40%">

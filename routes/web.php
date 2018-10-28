@@ -28,10 +28,13 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
 Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:0']], function () {
     Route::get('/', 'ScheduleController@index')->name('dash');
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
+    Route::get('/view', 'DashboardController@view')->name('view');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
+    Route::get('/viewrooms', 'DashboardController@viewrooms')->name('viewrooms');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
     Route::get('/reservation/{id}/delete', 'ReservationController@destroy');
+    Route::get('/reservation/{id}/ctr', 'ReservationController@ctr');
     Route::resource('users', 'UserController');
 });
 

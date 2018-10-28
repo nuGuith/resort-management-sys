@@ -40,7 +40,7 @@ class ReservationController extends Controller
         ([
             'customer_id' =>auth()->user()->id,
             'reservation_type_id' => trim($request->reservation_type),
-            // 'no_of_rooms' => trim($request->rooms),
+            'no_of_rooms' => trim($request->rooms),
             'start_datetime' => $request->date_starts.' '.$request->time_starts,
             'end_datetime' => $request->date_ends.' '.$request->time_ends,
             'no_of_guests' => trim($request->people),
@@ -60,5 +60,16 @@ class ReservationController extends Controller
         DB::table('reservation')
             ->where('id', $id)
             ->update(['isDeleted' => 1]);
+    }
+    public function ctr($id)
+    {   
+        $reservation_type = $_GET['reservation_type'];
+        $r = new Reservations;
+            $rtype= $r->get_rtype($reservation_type);
+            foreach($rtype as $rt)
+            {
+                $result = $rt->id;
+            }
+        return $result;
     }
 }

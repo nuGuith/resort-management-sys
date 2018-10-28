@@ -20,7 +20,7 @@
                     </select><br>
 
                     <label for="rooms" class="text-normal text-dark">Rooms:</label>
-                    <select multiple="" id="rooms" class="form-control select2" name="rooms[]" value="" required="" autofocus="">
+                    <select multiple="" id="rooms" class="form-control select2" name="rooms" value="" required="" autofocus="">
                         <option>&nbsp;</option>
                         @foreach($rooms as $room)
                             <option value="{{ $room -> id }}">{{ $room -> room_name }}</option>
@@ -37,7 +37,7 @@
                     <input id="time-ends" type="time" class="form-control" name="time_ends" value="" required="" autofocus="" style="display: inline; width: 49%"><br><br>
 
                     <label for="people" class="text-normal text-dark">Number of People:</label>
-                    <input id="people" type="number" class="form-control" name="people" value="" required="" autofocus=""><br>
+                    <input id="people" type="number" class="form-control" name="people" value="" required="" autofocus="" onclick="ctr();"><br>
 
                     <label for="amount" class="text-normal text-dark">Total Amount:</label>
                     <input id="amount" type="text" class="form-control" name="amount" value="0.00" required="" autofocus="" disabled=""><br>
@@ -102,5 +102,21 @@
             </td>
         </table>
     {!! Form::close() !!}
-
+    <script>
+        function ctr(id)
+        {   
+            $.ajax({
+                type: "GET",
+                data: {
+                    reservation_type: $("#reservation-type").val(), people:$("#people").val()
+                },
+                url: "/admin/reservation/" + id + "/ctr",
+                dataType: "JSON",
+                success:function(data)
+                {
+                    $("#amount").val(data);    
+                }
+            });
+        }
+    </script>
 @endsection

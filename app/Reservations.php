@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Reservations extends Model
@@ -29,4 +30,10 @@ class Reservations extends Model
         'customer_cancelled',
         'customer_reason',
     ];
+    public function get_rtype($rtype){
+        $result = DB::table('reservation_type')
+            ->where('id', $rtype)
+            ->get();
+        return compact('result');
+    }
 }
