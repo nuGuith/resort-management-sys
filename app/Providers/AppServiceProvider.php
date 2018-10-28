@@ -20,9 +20,9 @@ class AppServiceProvider extends ServiceProvider
         if (!defined('GUEST')) {
            define('GUEST', config('variables.APP_GUEST', 'guest'));
         }
-        $url->forceSchema('https');
         require_once base_path('resources/macros/form.php');
         Schema::defaultStringLength(191);
+        \URL::forceScheme('https');
     }
 
     /**
