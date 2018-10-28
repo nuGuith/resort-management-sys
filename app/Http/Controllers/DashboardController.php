@@ -9,7 +9,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard.index');
+        if(Auth::user()->role === 10)
+            return view('admin.dashboard.index');
+        else
+            return view('admin.schedule.index');
     }
 
     public function welcome()
@@ -34,6 +37,9 @@ class DashboardController extends Controller
 
     public function schedule()
     {
-        return view('admin.schedule.index');
+        if(Auth::user()->role === 10)
+            return view('admin.schedule.index');
+        else
+            return view('guest.schedule.index');
     }
 }
