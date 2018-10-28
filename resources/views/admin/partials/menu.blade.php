@@ -1,6 +1,6 @@
 @if ( auth()->user()->role === 10)
 <li class="nav-item mT-30">
-    <a class='sidebar-link' href="{{ route(ADMIN . '.dash') }}" default>
+    <a class='sidebar-link' href="{{ route(ADMIN . '.dashboard') }}" default>
         <span class="icon-holder">
             <i class="c-blue-500 ti-home"></i>
         </span>

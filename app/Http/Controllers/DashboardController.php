@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -33,9 +34,6 @@ class DashboardController extends Controller
 
     public function schedule()
     {
-        if(auth()->user()->role() == 10)
-            return view('admin.schedule.index');
-        if(auth()->user()->role() == 0)
-            return view('guest.schedule.index');
+        return view('admin.schedule.index');
     }
 }

@@ -1,12 +1,16 @@
 @extends('admin.default')
 
 @section('page-header')
-    Guest <small>SCHEDULE</small>
+    @if(auth()->user()->role === 0)
+        Guest <small>SCHEDULE</small>
+    @elseif(auth()->user()->role === 10)
+        Admin <small>SCHEDULE</small>
+    @endif
 @endsection
 
 @section('content')
 
-   	<div class="col-md-11" style="margin:0% 4%;">
+   	<div class="col-md-12">
         <div id='full-calendar'></div>
     </div>
 
