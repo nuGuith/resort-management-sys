@@ -1,10 +1,18 @@
 @if ( auth()->user()->role === 10)
 <li class="nav-item mT-30">
-    <a class='sidebar-link' href="{{ route(ADMIN . '.dash') }}" default>
+    <a class='sidebar-link' href="{{ route(ADMIN . '.dashboard') }}" default>
         <span class="icon-holder">
             <i class="c-blue-500 ti-home"></i>
         </span>
         <span class="title">Dashboard</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class='sidebar-link' href="{{ route(ADMIN . '.messages.index') }}">
+        <span class="icon-holder">
+          <i class="c-green-500 ti-email"></i>
+        </span>
+        <span class="title">Messages</span>
     </a>
 </li>
 <li class="nav-item">
@@ -70,6 +78,14 @@
     </a>
 </li>
 @elseif ( auth()->user()->role === 0)
+<li class="nav-item mT-30">
+    <a class='sidebar-link' href="{{ route(ADMIN . '.message.index') }}">
+        <span class="icon-holder">
+          <i class="c-green-500 ti-email"></i>
+        </span>
+        <span class="title">Messages</span>
+    </a>
+</li>
 <li class="nav-item">
     <a class='sidebar-link' href="{{ route(ADMIN . '.schedule.index') }}">
         <span class="icon-holder">

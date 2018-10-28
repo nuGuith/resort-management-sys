@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard.index');
+        if(Auth::user()->role === 10)
+            return view('admin.dashboard.index');
+        else
+            return view('admin.schedule.index');
     }
 
     public function welcome()
@@ -26,8 +30,16 @@ class DashboardController extends Controller
         return view('guest.rooms.index');
     }
 
+    public function messages()
+    {
+        return view('guest.messages.index');
+    }
+
     public function schedule()
     {
-        return view('guest.schedule.index');
+        if(Auth::user()->role === 10)
+            return view('admin.schedule.index');
+        else
+            return view('guest.schedule.index');
     }
 }

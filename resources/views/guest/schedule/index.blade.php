@@ -6,7 +6,7 @@
 
 @section('content')
 
-   	<div class="col-md-11" style="margin:0% 4%;">
+   	<div class="col-md-12">
         <div id='full-calendar'></div>
     </div>
 
