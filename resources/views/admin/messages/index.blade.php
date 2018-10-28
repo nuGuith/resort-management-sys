@@ -15,15 +15,16 @@
 
                     <!-- List -->
                     <div class="layer w-100 fxg-1 scrollable pos-r">
+
                       <div class="peers fxw-nw ai-c p-20 bdB bgc-white bgcH-grey-50 cur-p">
                         <div class="peer">
                           <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="" class="w-3r h-3r bdrs-50p">
                         </div>
                         <div class="peer peer-greed pL-20">
                           <h6 class="mB-0 lh-1 fw-400">John Doe</h6>
-                          <small class="lh-1 c-green-500">Online</small>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </div>

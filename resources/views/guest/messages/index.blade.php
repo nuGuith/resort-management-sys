@@ -43,7 +43,7 @@
                               <div class="layer">
                                 <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
                                   <div class="peer {{ $m->user_id == $user_id ? 'mL-10 ord-1' : 'mR-10 ord-0' }} ">
-                                    <small>{{ date('H:iA', strtotime($m->time)) }}</small>
+                                    <small>{{ date('h:i A', strtotime($m->time)) }}</small>
                                   </div>
                                   <div class="peer-greed {{ $m->user_id == $user_id ? 'ord-0' : 'ord-1' }}">
                                     <span>{{ $m->content }}</span>

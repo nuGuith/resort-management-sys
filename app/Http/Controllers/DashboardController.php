@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -28,6 +29,14 @@ class DashboardController extends Controller
     public function rooms()
     {
         return view('guest.rooms.index');
+    }
+
+    public function viewrooms()
+    {
+        $rooms = DB::table('room')
+            ->where('isDeleted', 0)
+            ->get();
+        return view ('guest.rooms.viewrooms', compact('rooms'));
     }
 
     public function messages()

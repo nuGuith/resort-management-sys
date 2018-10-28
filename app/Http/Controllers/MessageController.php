@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Auth;
+use App\Message;
 
 class MessageController extends Controller
 {
@@ -15,6 +16,10 @@ class MessageController extends Controller
             ->join('message as m', 'h.id', '=', 'm.header_id')
             ->where(['m.user_id' => $id])
             ->first();
+        if(is_null($header)){
+            $header = new Message;
+            $header->header_id = 0;
+        }
         $messages = DB::table('message_header as h')
             ->join('message as m', 'h.id', '=', 'm.header_id')
             ->where(['m.header_id' => $header->header_id])

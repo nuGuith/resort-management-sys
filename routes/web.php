@@ -20,7 +20,6 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::resource('/m/resort', 'ResortController');
     Route::put('/m/resort', 'ResortController@update');
     Route::get('/m/resort/{id}/delete', 'ResortController@destroy');
-    Route::resource('/m/rates', 'PricesController');
     Route::resource('/m/prices', 'PricesController');
     Route::put('/m/prices', 'PricesController@update');
     Route::get('/m/prices/{id}/delete', 'PricesController@destroy');
@@ -31,6 +30,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
+    Route::get('/viewrooms', 'DashboardController@viewrooms')->name('viewrooms');
     Route::resource('message', 'MessageController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');

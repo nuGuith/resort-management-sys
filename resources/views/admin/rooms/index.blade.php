@@ -143,7 +143,11 @@
       </div>
    </div>
    <!-- END OF MODAL -->
-
+   
+   <script type="text/javascript" src="{{URL('js/jquery.min.js')}}"></script>
+   <script type="text/javascript" src="{{URL('js/bootstrap.min.js')}}"></script>
+   <script type="text/javascript" src="{{URL('js/tether.min.js')}}"></script>
+   <script type="text/javascript" src="{{URL('js/bootstrap.min.js')}}"></script>
    <script>
         function editModal(id)
         {
@@ -173,6 +177,6 @@
                 }
             });
         }
-   </script>   
+   </script>
 
 @endsection

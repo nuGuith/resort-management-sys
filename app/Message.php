@@ -8,8 +8,9 @@ class Message extends Model
 {
     public $timestamps = true;
     protected $table = 'message';
-    //protected $primaryKey = 'reservationID';
     protected $fillable =
     [
+        'content',
+        'header_id'
     ];
 }

@@ -28,7 +28,7 @@
                         $etime =  explode(':',$edate[1]);
                     ?>
                     <tr>
-                        <td>{{ $reservation->id }}</td>
+                        <td>{{ $reservation-> id }}</td>
                         <td>{{ $reservation-> name }}</td>
                         <td><a href="{{ route(ADMIN . '.reservations.show', 1) }}" class="btn cur-p btn-info">View</a></td>
                         <td>{{ $reservation->status }}</td>

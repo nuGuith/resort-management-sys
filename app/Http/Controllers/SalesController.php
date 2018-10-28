@@ -18,7 +18,11 @@ class SalesController extends Controller
      */
     public function index()
     {
-        return view ('admin.sales.index');
+        $sales = DB::table('reservation as r')
+            ->join('reservation_type as t', 'r.reservation_type_id', '=', 't.id')
+            ->where(['status' => 'ACCEPTED', 'status' => 'COMPLETED'])
+            ->get();
+        return view ('admin.sales.index', compact('sales'));
     }
 
     /**
@@ -39,18 +43,7 @@ class SalesController extends Controller
      */
     public function store(Request $request)
     {
-        DB::beginTransaction();
-        Rooms::create
-        ([
-            'room_name' => trim($request->room_type),
-            'room_rate' => trim($request->room_rate),
-            'description' => trim($request->room_desc),
-            'image' => trim($request->room_pic),
-        ]);
-
-        DB::commit();
-
-        return redirect('/admin/m/rooms');
+        
     }
 
     /**
