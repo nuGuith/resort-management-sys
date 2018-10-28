@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Auth;
 
 class MessageController extends Controller
 {
     public function index()
     {
+        $id = Auth::user()->id;
+        $header = DB::table('message_header as h')
+            ->join('message as m', 'h.id', '=', 'm.header_id')
+            ->where(['m.user_id' => $id])
+            ->first();
         $messages = DB::table('message_header as h')
             ->join('message as m', 'h.id', '=', 'm.header_id')
-            ->where(['m.header_id' => 1])
+            ->where(['m.header_id' => $header->header_id])
             ->orderBy('m.id', 'asc')
             ->get();
-        //dd($messages);
-        return view('guest.messages.index', compact('messages'));
+        $header_id = $header->header_id;
+        return view('guest.messages.index', compact('messages', 'header_id'));
     }
 
     public function show($id)
@@ -24,6 +30,14 @@ class MessageController extends Controller
             ->join('message as m', 'h.id', 'm.header_id')
             ->where('h.from_id', $id)
             ->get();
-            return response()->json(compact('message'));
+        return response()->json(compact('message'));
+    }
+
+    public function store(Request $request)
+    {
+        $id = Auth::user()->id;
+        DB::table('message')->insert(
+            ['header_id' => $request->header_id, 'content' => $request->message, 'user_id' => $id]
+        );
     }
 }

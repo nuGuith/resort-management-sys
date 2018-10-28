@@ -31,7 +31,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
-Route::resource('message', 'MessageController');
+    Route::resource('message', 'MessageController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
     Route::resource('users', 'UserController');
