@@ -11,7 +11,7 @@
             <td style="width: 40%">
                 <div class="form-group">
                     <label for="reservation-type" class="text-normal text-dark">Reservation Type:</label>
-                    <select id="reservation-type" class="form-control" name="reservation_type" value="" required="" autofocus="">
+                    <select id="reservation-type" class="form-control select2" name="reservation_type" value="" required="" autofocus="">
                     
                     <option>&nbsp;</option>
                     @foreach($rtype as $rt)
@@ -36,7 +36,7 @@
                     <input id="date-ends" type="date" class="form-control" name="date_ends" value="" required="" autofocus="" style="display: inline; width: 50%">
                     <input id="time-ends" type="time" class="form-control" name="time_ends" value="" required="" autofocus="" style="display: inline; width: 49%"><br><br>
 
-                    <label for="people" class="text-normal text-dark">Number of People:</label>
+                    <label for="people" class="text-normal text-dark">Number of Guests:</label>
                     <input id="people" type="number" class="form-control" name="people" value="" required="" autofocus=""><br>
 
                     <label for="amount" class="text-normal text-dark">Total Amount:</label>
@@ -102,5 +102,15 @@
             </td>
         </table>
     {!! Form::close() !!}
+    <script type="text/javascript" src="{{ URL('js/jquery.min.js') }}"></script>
+    <script>
+    var no_of_rooms = 0;
+    $('#rooms').on("change", function(){
+        no_of_rooms = $("#rooms :selected").length;
+        alert(no_of_rooms);
+        console.log(no_of_rooms);
+    });
+
+    </script>
 
 @endsection

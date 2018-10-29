@@ -13,9 +13,10 @@ class ReservationController extends Controller
 {
     public function index()
     {
-        $reservations = DB::table('reservation')
+        $reservations = DB::table('reservation as rv')
+            ->join('reservation_type as rt', 'rv.reservation_type_id', '=', 'rt.id')
             ->where('customer_id', auth()->user()->id)
-            ->where('isDeleted', 0)
+            ->where('rv.isDeleted', 0)
             ->get();
 
         return view('guest.reservation.index', compact('reservations'));
