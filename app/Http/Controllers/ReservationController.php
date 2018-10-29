@@ -66,10 +66,8 @@ class ReservationController extends Controller
         $reservation_type = $_GET['reservation_type'];
         $r = new Reservations;
             $rtype= $r->get_rtype($reservation_type);
-            foreach($rtype as $rt)
-            {
-                $result = $rt->id;
-            }
-        return $result;
+            
+            print_r($rtype);        
+        return $rtype;
     }
 }

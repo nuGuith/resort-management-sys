@@ -22,8 +22,8 @@
 	        <td style="width: 50%">
 	            <label id="room1" class="text-normal text-dark" style="margin-left: 5%">
                     <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+						ROOM 1
+					</em>
                 </label>
 	        </td>
 	    </tr>
@@ -35,9 +35,9 @@
 	        </td>
 	        <td style="width: 50%">
 	            <label id="room2" class="text-normal text-dark" style="margin-left: 5%">
-                    <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+					<em>
+						ROOM 2
+					</em>
                 </label>
 	        </td>
 	    </tr>
@@ -49,9 +49,9 @@
 	        </td>
 	        <td style="width: 50%">
 	            <label id="room3" class="text-normal text-dark" style="margin-left: 5%">
-                    <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+					<em>
+						ROOM 3
+					</em>
                 </label>
 	        </td>
 	    </tr>
@@ -63,9 +63,9 @@
 	        </td>
 	        <td style="width: 50%">
 	            <label id="room4" class="text-normal text-dark" style="margin-left: 5%">
-                    <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+					<em>
+						ROOM 4
+					</em>
                 </label>
 	        </td>
 	    </tr>

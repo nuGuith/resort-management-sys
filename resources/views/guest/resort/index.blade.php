@@ -22,7 +22,9 @@
 	        <td style="width: 45%">
 	            <label id="house" class="text-normal text-dark" style="margin-left: 5%">
                     <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
+                      The house consists of a dining area where the guests can enjoy their meals,
+					  three(3) salas - one which includes a television where guests can bond, 2 kitchens - one dirty kitchen,
+					  a balcony to enjoy the view and feel the breeze and four (4) rooms where guests can comfortably rest.
                     </em>
                 </label>
 	        </td>
@@ -46,8 +48,8 @@
 	        <td style="width: 45%">
 	            <label id="pavillion" class="text-normal text-dark" style="margin-right: 5%">
                     <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+						The Pavilion.
+					</em>
                 </label>
 	        </td>
 	        <td style="width: 45%">
@@ -66,8 +68,8 @@
 	        <td style="width: 45%">
 	            <label id="pool" class="text-normal text-dark" style="margin-left: 5%">
                     <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+						The pool.
+					</em>
                 </label>
 	        </td>
 	    </tr>
@@ -89,8 +91,7 @@
 	        <td style="width: 45%">
 	            <label id="court" class="text-normal text-dark" style="margin-right: 5%">
                     <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+                        The basketball court.</em>
                 </label>
 	        </td>
 	        <td style="width: 45%">
@@ -109,8 +110,8 @@
 	        <td style="width: 45%">
 	            <label id="kubo" class="text-normal text-dark" style="margin-left: 5%">
                     <em>
-                        Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each. Each reservation comes with a free room. Additional rooms will cost 1,500php each.
-                    </em>
+                        The nipa hut.
+					</em>
                 </label>
 	        </td>
 	    </tr>

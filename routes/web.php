@@ -32,11 +32,11 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
     Route::get('/view', 'DashboardController@view')->name('view');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
-<<<<<<< HEAD
     Route::get('/viewrooms', 'DashboardController@viewrooms')->name('viewrooms');
-=======
-Route::resource('message', 'MessageController');
->>>>>>> e3bd6f6b4bb36427a125bd03a9dc913c4b56c3ea
+// <<<<<<< HEAD
+// =======
+// >>>>>>> e3bd6f6b4bb36427a125bd03a9dc913c4b56c3ea
+    Route::resource('message', 'MessageController');
     Route::resource('schedule', 'ScheduleController');
     Route::resource('reservation', 'ReservationController');
     Route::get('/reservation/{id}/delete', 'ReservationController@destroy');

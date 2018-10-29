@@ -13,6 +13,37 @@
    </head>
 
    <body>
+
+      <div id="fb-root"></div>
+        <script>
+          //Facebook
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=1996791573701166&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          
+          //Twitter
+            window.twttr = (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0],
+                t = window.twttr || {};
+              if (d.getElementById(id)) return t;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "https://platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js, fjs);
+
+              t._e = [];
+              t.ready = function(f) {
+                t._e.push(f);
+              };
+
+              return t;
+            }(document, "script", "twitter-wjs"));
+        </script>
+
       <div class="container">
 
          <div class="peer" id="top">
@@ -22,7 +53,8 @@
          <div id="container-bg">
 
             <div style="margin-right: 4%" align="right">
-               <a href="login" class="btn btn-link">Login</a>
+
+              <a href="login" class="btn btn-link">Login</a>
                <a>|</a>
                <a href="/register" class="btn btn-link">Create new account</a>
             </div>
@@ -84,16 +116,21 @@
                   <img id="image-vector" src="{{ asset('images/resort/pool-vector.png') }}">
                   <img id="image-vector" src="{{ asset('images/resort/pav-vector.png') }}">
                   <label id="text-vector" class="text-normal text-dark">
-                     House that can this and that. House that can this and that. House that can this and that.
+                     A house where you can rest and relax away from the city.
                   </label>
                   <label id="text-vector" class="text-normal text-dark">
-                     Pool that can this and that. Pool that can this and that. Pool that can this and that.
+                     A pool to enjoy the warm breeze of summer.
                   </label>
                   <label id="text-vector" class="text-normal text-dark">
-                     Pavilion that can this and that. Pavilion that can this and that. Pavilion that can this and that.
+                     A pavilion to experience a party you to remember.
                   </label>
                </div>
             </div>
+
+            <div class="" style="background-color: white;" align="center">
+              <img src="{{ url('/images/resort/footer3.png') }}">
+            </div>
+
          </div>
       </div>
    </body>

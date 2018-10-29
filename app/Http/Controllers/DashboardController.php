@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
-=======
+//=======
 use Auth;
->>>>>>> e3bd6f6b4bb36427a125bd03a9dc913c4b56c3ea
+//>>>>>>> e3bd6f6b4bb36427a125bd03a9dc913c4b56c3ea
 
 class DashboardController extends Controller
 {
@@ -42,20 +42,23 @@ class DashboardController extends Controller
         return view('guest.rooms.index');
     }
 
-<<<<<<< HEAD
+
     public function viewrooms()
     {
         $rooms = DB::table('room')
             ->where('isDeleted', 0)
             ->get();
         return view ('guest.rooms.viewrooms', compact('rooms'));
-=======
+    }
+
     public function messages()
     {
         return view('guest.messages.index');
->>>>>>> e3bd6f6b4bb36427a125bd03a9dc913c4b56c3ea
-    }
-
+ }
+// <<<<<<< HEAD
+// ======
+// >>>>>>> e3bd6f6b4bb36427a125bd03a9dc913c4b56c3ea
+//   = 
     public function schedule()
     {
         if(Auth::user()->role === 10)
