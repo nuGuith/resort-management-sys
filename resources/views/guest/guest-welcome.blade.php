@@ -14,14 +14,14 @@
               </div>
               <div class="col-lg-4"></div>
               <div class="col-lg-3" style="margin-top:20px; margin-right:-40px;">
-              <h4>
-                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcarinas-place.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" data-layout="button" data-size="large" data-mobile-iframe="true" style="border: 1px solid #2196F3; border-radius:4px; padding:5px;">
-                  <span class="icon-holder">
-                    <i class="c-blue-500 ti-facebook"></i>
-                  </span>
-                  <span class="title">Share us on Facebook!</span>
-                </a>
-              </h4>
+                <h4>
+                  <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcarinas-place.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore" data-layout="button" data-size="large" data-mobile-iframe="true" style="border: 1px solid #2196F3; border-radius:4px; padding:5px;">
+                    <span class="icon-holder">
+                      <i class="c-blue-500 ti-facebook"></i>
+                    </span>
+                    <span class="title">Share us on Facebook!</span>
+                  </a>
+                </h4>
               </div>
               <div class="col-lg-2" style="margin-top:20px;">
               <h4>
@@ -32,6 +32,7 @@
                   <span class="title">Tweet.</span>
                 </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </h4>
+              </div>
             <div>
          </div>
 
