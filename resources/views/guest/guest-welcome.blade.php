@@ -25,14 +25,13 @@
               </div>
               <div class="col-lg-2" style="margin-top:20px;">
               <h4>
-                <a target="_blank" href="https://twitter.com/intent/tweet?text=Book%with%us%20Now!" class="fb-xfbml-parse-ignore" data-layout="button" data-size="large" data-mobile-iframe="true" style="border: 1px solid #2196F3; border-radius:4px; padding:5px;">
+                <a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="fb-xfbml-parse-ignore" data-layout="button" data-size="large" data-mobile-iframe="true" style="border: 1px solid #2196F3; border-radius:4px; padding:5px;" data-show-count="false">
                   <span class="icon-holder">
                     <i class="c-lightblue-500 ti-twitter-alt"></i>
                   </span>
-                  <span class="title">Tweet with us!</span>
-                </a>
+                  <span class="title">Tweet.</span>
+                </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </h4>
-              </div>
             <div>
          </div>
 
@@ -113,7 +112,7 @@
             </div>
          </div>
       </div>
-      
+
         <script>
           //Facebook
           (function(d, s, id) {
