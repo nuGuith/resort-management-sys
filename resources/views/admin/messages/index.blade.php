@@ -21,7 +21,7 @@
                           <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="" class="w-3r h-3r bdrs-50p">
                         </div>
                         <div class="peer peer-greed pL-20">
-                          <h6 class="mB-0 lh-1 fw-400">John Doe</h6>
+                          <h6 class="mB-0 lh-1 fw-400">John Dizon</h6>
                         </div>
                       </div>
 
@@ -65,30 +65,20 @@
                               <div class="layer">
                                 <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
                                   <div class="peer mR-10">
-                                    <small>10:00 AM</small>
+                                    <small>09:59 AM</small>
                                   </div>
                                   <div class="peer-greed">
-                                    <span>Lorem Ipsum is simply dummy text of</span>
+                                    <span>Hello po</span>
                                   </div>
                                 </div>
                               </div>
                               <div class="layer">
                                 <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
                                   <div class="peer mR-10">
-                                    <small>10:00 AM</small>
+                                    <small>09:59 AM</small>
                                   </div>
                                   <div class="peer-greed">
-                                    <span>the printing and typesetting industry.</span>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="layer">
-                                <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
-                                  <div class="peer mR-10">
-                                    <small>10:00 AM</small>
-                                  </div>
-                                  <div class="peer-greed">
-                                    <span>Lorem Ipsum has been the industry's</span>
+                                    <span>nagpareserve po ako</span>
                                   </div>
                                 </div>
                               </div>
@@ -109,7 +99,7 @@
                                     <small>10:00 AM</small>
                                   </div>
                                   <div class="peer-greed ord-0">
-                                    <span>Heloo</span>
+                                    <span>Good day!</span>
                                   </div>
                                 </div>
                               </div>
@@ -119,7 +109,16 @@
                                     <small>10:00 AM</small>
                                   </div>
                                   <div class="peer-greed ord-0">
-                                    <span>??</span>
+                                    <span>this is the admin of Carina's place.</span>
+                                  </div>
+                              </div>
+                              <div class="layer">
+                                <div class="peers fxw-nw ai-c pY-3 pX-10 bgc-white bdrs-2 lh-3/2">
+                                  <div class="peer mL-10 ord-1">
+                                    <small>10:00 AM</small>
+                                  </div>
+                                  <div class="peer-greed ord-0">
+                                    <span>remind ko lang po yung sa downpayment.</span>
                                   </div>
                               </div>
                             </div>
