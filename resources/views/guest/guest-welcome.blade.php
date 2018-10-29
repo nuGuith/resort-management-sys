@@ -2,10 +2,12 @@
 
 @section('content')
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <body>
+      <div class="container">
          <div class="peer" id="top">
             <div class="row" style="margin-bottom:40px;">
               <div class="col-lg-3" style="margin-bottom:20px;">
@@ -91,7 +93,7 @@
             </div>
 
             <div class="peer" style="" align="center">
-               <img id="image-message" style="width:60%; height:auto;" src="{{ asset('images/resort/message.png') }}">
+               <img id="image-message" src="{{ asset('images/resort/message.png') }}">
             </div>
 
             <div class="peer">
@@ -111,7 +113,8 @@
                </div>
             </div>
          </div>
-
+      </div>
+   </body>
         <script>
           //Facebook
           (function(d, s, id) {
@@ -216,5 +219,6 @@
          border-radius: 20px;
       }
    </style>
-   
+
+</html>
 @endsection
