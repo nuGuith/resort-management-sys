@@ -120,6 +120,7 @@
                                   <div class="peer-greed ord-0">
                                     <span>remind ko lang po yung sa downpayment.</span>
                                   </div>
+                                </div>
                               </div>
                             </div>
                           </div>
