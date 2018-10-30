@@ -11,7 +11,7 @@
             <td style="width: 40%">
                 <div class="form-group">
                     <label for="reservation-type" class="text-normal text-dark">Reservation Type:</label>
-                    <select id="reservation-type" class="form-control select2" name="reservation_type" value="" required="" autofocus="">
+                    <select id="reservation-type" class="form-control" name="reservation_type" value="" required="" autofocus="">
                         <option>&nbsp;</option>
                         @foreach($rtype as $rtype)
                             <option value="{{ $rtype->id }}" data-rate="{{ $rtype->reservation_rate }}" data-max-guest="{{$rtype->max_guest}}" data-priceperhead="{{ $rtype->price_per_head }}">{{ $rtype->name }}</option>
@@ -114,6 +114,7 @@
 
     var total_amount = 0;
     var reservation_rate = 0;
+    var max_guests = 0;
 
     $(document).ready(function(){
         var no_of_rooms = 0;
@@ -124,7 +125,9 @@
 
     $('#reservation-type').on('change', function(){
         reservation_rate = parseFloat($(":selected", this).data('rate'));
-        $('#max-guests').html($(":selected", this).data('max-guest') + ", Additional guests: PHP" + $(":selected", this).data('priceperhead') + " per head.");
+        max_guests = $(":selected", this).data('max-guest');
+        $('#people').attr('max').val(max_guests)
+        $('#max-guests').html(max_guests + ", Additional guests: PHP" + $(":selected", this).data('priceperhead') + " per head.");
         compute();
     });
 

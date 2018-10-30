@@ -8,9 +8,11 @@
 				{!! Form::myInput('password', 'password', 'Password') !!}
 		
 				{!! Form::myInput('password', 'password_confirmation', 'Password again') !!}
-		
-				{!! Form::mySelect('role', 'Role', config('variables.role'), null, ['class' => 'form-control select2']) !!}
-		
+	
+				@if(auth()->user()->role == 0)
+					{!! Form::mySelect('role', 'Role', config('variables.role'), null, ['class' => 'form-control select2']) !!}
+				@endif
+				
 				{!! Form::myFile('avatar', 'Avatar') !!}
 		
 				{!! Form::myTextArea('bio', 'Bio') !!}
