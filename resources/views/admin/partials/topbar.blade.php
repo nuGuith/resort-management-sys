@@ -32,52 +32,10 @@
                         <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
                             <li>
                                 <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/1.jpg" alt="">
-                                    </div>
                                     <div class="peer peer-greed">
                                         <span>
-                                            <span class="fw-500">John Doe</span>
-                                            <span class="c-grey-600">liked your <span class="text-dark">post</span>
-                                            </span>
+                                            No new notifications.
                                         </span>
-                                        <p class="m-0">
-                                            <small class="fsz-xs">5 mins ago</small>
-                                        </p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/2.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                                        <span>
-                                            <span class="fw-500">Moo Doe</span>
-                                            <span class="c-grey-600">liked your <span class="text-dark">cover image</span>
-                                            </span>
-                                        </span>
-                                        <p class="m-0">
-                                            <small class="fsz-xs">7 mins ago</small>
-                                        </p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class='peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100'>
-                                    <div class="peer mR-15">
-                                        <img class="w-3r bdrs-50p" src="/images/3.jpg" alt="">
-                                    </div>
-                                    <div class="peer peer-greed">
-                                        <span>
-                                            <span class="fw-500">Lee Doe</span>
-                                            <span class="c-grey-600">commented on your <span class="text-dark">video</span>
-                                            </span>
-                                        </span>
-                                        <p class="m-0">
-                                            <small class="fsz-xs">10 mins ago</small>
-                                        </p>
                                     </div>
                                 </a>
                             </li>

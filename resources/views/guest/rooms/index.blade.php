@@ -16,7 +16,7 @@
    		<tr>
 	        <td style="width: 40%">
 	            <div class="form-group">
-	                <img class="room-image" src="{{ asset('images/room1.png') }}"><br><br>
+	                <img class="room-image" src="{{ asset('images/room1.PNG') }}"><br><br>
 	            </div>
 	        </td>
 	        <td style="width: 50%">
@@ -44,7 +44,7 @@
 	    <tr>
 	        <td style="width: 40%">
 	            <div class="form-group">
-	                <img class="room-image" src="{{ asset('images/room3.png') }}"><br><br>
+	                <img class="room-image" src="{{ asset('images/room3.PNG') }}"><br><br>
 	            </div>
 	        </td>
 	        <td style="width: 50%">
@@ -58,7 +58,7 @@
 	    <tr>
 	        <td style="width: 40%">
 	            <div class="form-group">
-	                <img class="room-image" src="{{ asset('images/room4.png') }}"><br><br>
+	                <img class="room-image" src="{{ asset('images/room4.PNG') }}"><br><br>
 	            </div>
 	        </td>
 	        <td style="width: 50%">
