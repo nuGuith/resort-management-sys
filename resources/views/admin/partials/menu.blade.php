@@ -94,13 +94,6 @@
         <span class="title">Schedule</span>
     </a>
 </li>
-<li class="nav-item">
-    <a class='sidebar-link' href="{{ route(ADMIN . '.reservation.index') }}">
-        <span class="icon-holder">
-          <i class="c-light-blue-500 ti-pencil"></i>
-        </span>
-        <span class="title">Reservation</span>
-    </a>
 </li>
 <li class="nav-item">
     <a class='sidebar-link' href="{{ route(ADMIN . '.resort') }}">
@@ -118,6 +111,13 @@
         <span class="title">Rooms</span>
     </a>
 </li>
+<li class="nav-item">
+    <a class='sidebar-link' href="{{ route(ADMIN . '.reservation.index') }}">
+        <span class="icon-holder">
+          <i class="c-light-blue-500 ti-pencil"></i>
+        </span>
+        <span class="title">My Reservations</span>
+    </a>
 <li class="nav-item">
     <a class='sidebar-link' href="{{ route(ADMIN . '.users.edit', auth()->user()->id) }}">
         <span class="icon-holder">
