@@ -20,9 +20,9 @@
                           </div>
                         </div>
                         <div class="peers">
-                          <a href="" class="peer td-n c-grey-900 cH-blue-500 fsz-md" title="">
+                          <!-- <a href="" class="peer td-n c-grey-900 cH-blue-500 fsz-md" title="">
                             <i class="ti-more"></i>
-                          </a>
+                          </a> -->
                         </div>
                       </div>
                     </div>
