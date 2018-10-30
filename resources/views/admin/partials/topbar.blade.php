@@ -43,9 +43,9 @@
                     </li>
                     <li class="pX-20 pY-15 ta-c bdT">
                         <span>
-                            <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications
+                            <!-- <a href="" class="c-grey-600 cH-blue fsz-sm td-n">View All Notifications
                                 <i class="ti-angle-right fsz-xs mL-10"></i>
-                            </a>
+                            </a> -->
                         </span>
                     </li>
                 </ul>

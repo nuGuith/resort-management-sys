@@ -16,12 +16,12 @@
                     <input id="contact-no" type="text" class="form-control" name="contact-no" value="{{ $reservations->contact_no }}" required="" autofocus="" disabled=""><br>
 
                     <label for="reservation-type" class="text-normal text-dark">Reservation Type:</label><br>
-                    <input id="reservation-type" type="text" class="form-control" name="reservation-type" value="" required="" autofocus="" disabled=""><br>
+                    <input id="reservation-type" type="text" class="form-control" name="reservation-type" value="{{ $reservations->rtype }}" required="" autofocus="" disabled=""><br>
 
                     <label for="rooms" class="text-normal text-dark">Rooms:</label><br>
-                    <input id="rooms" type="text" class="form-control" name="rooms" value="" required="" autofocus="" disabled=""><br>
+                    <input id="rooms" type="text" class="form-control" name="rooms" value="{{ $reservations->no_of_rooms }}" required="" autofocus="" disabled=""><br>
 
-                    <label for="people" class="text-normal text-dark">Number of People:</label>
+                    <label for="people" class="text-normal text-dark">Number of Guests:</label>
                     <input id="people" type="number" class="form-control" name="people" value="{{ $reservations->no_of_guests }}" required="" autofocus="" disabled=""><br>
 
                     <label for="reservation-desc" class="text-normal text-dark">Reservation Description:</label><br>

@@ -24,8 +24,9 @@ class ReservationsController extends Controller
     {
         $reservations = DB::table('reservation')
             ->join('users', 'users.id', '=', 'reservation.customer_id')
-            // ->join('reservation_type', 'reservation_type.id', '=', 'reservation.reservation_type_id')
-            ->where(['reservation.id'=>$id], 'isDeleted', 0)
+            ->join('reservation_type', 'reservation_type.id', '=', 'reservation.reservation_type_id')
+            ->where(['reservation.id' => $id, 'reservation.isDeleted' => 0])
+            ->select('reservation_type.name as rtype', 'users.*', 'reservation.*')
             ->first();
 
         return view('admin.reservations.show', compact('reservations'));
