@@ -34,7 +34,7 @@
                         <td>{{ $reservation->status }}</td>
                         <td>{{ date('F d, Y h:iA', strtotime($reservation->start_datetime)) }} to {{ date('F d, Y h:iA', strtotime($reservation->end_datetime)) }}</td>
                         <td>
-                            <a href="" class="td-n c-red-500 cH-blue-500 fsz-md p-5"><i class="ti-trash"></i>Decline</a>
+                            <a href="" class="td-n  cH-blue-500 fsz-md p-5"><i class="c-red-500 ti-trash"></i>Decline</a>
                         </td>
                     </tr>
                 @endforeach
