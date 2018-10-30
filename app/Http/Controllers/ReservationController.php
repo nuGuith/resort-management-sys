@@ -13,10 +13,9 @@ class ReservationController extends Controller
 {
     public function index()
     {
-        $reservations = DB::table('reservation as rv')
-            ->join('reservation_type as rt', 'rv.reservation_type_id', '=', 'rt.id')
+        $reservations = DB::table('reservation')
             ->where('customer_id', auth()->user()->id)
-            ->where('rv.isDeleted', 0)
+            ->where('isDeleted', 0)
             ->get();
 
         return view('guest.reservation.index', compact('reservations'));
@@ -31,6 +30,7 @@ class ReservationController extends Controller
         $rooms = DB::table('room')
             ->where('isDeleted', 0)
             ->get();
+        
         return view('guest.reservation.create', compact('rtype', 'rooms'));
     }
 
@@ -41,7 +41,8 @@ class ReservationController extends Controller
         ([
             'customer_id' =>auth()->user()->id,
             'reservation_type_id' => trim($request->reservation_type),
-            // 'no_of_rooms' => trim($request->rooms),
+            'no_of_rooms' => 4,
+            'status' => 'PENDING',
             'start_datetime' => $request->date_starts.' '.$request->time_starts,
             'end_datetime' => $request->date_ends.' '.$request->time_ends,
             'no_of_guests' => trim($request->people),

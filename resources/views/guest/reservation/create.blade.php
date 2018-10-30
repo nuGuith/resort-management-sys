@@ -12,21 +12,21 @@
                 <div class="form-group">
                     <label for="reservation-type" class="text-normal text-dark">Reservation Type:</label>
                     <select id="reservation-type" class="form-control select2" name="reservation_type" value="" required="" autofocus="">
-                    
-                    <option>&nbsp;</option>
-                    @foreach($rtype as $rt)
-                        <option value="{{ $rt -> id }}">{{ $rt -> name }}</option>
-                    @endforeach
-                    </select><br>
-
-                    <label for="rooms" class="text-normal text-dark">Rooms:</label>
-                    <select multiple="" id="rooms" class="form-control select2" name="rooms[]" value="" required="" autofocus="">
                         <option>&nbsp;</option>
-                        @foreach($rooms as $room)
-                            <option value="{{ $room -> id }}">{{ $room -> room_name }}</option>
+                        @foreach($rtype as $rtype)
+                            <option value="{{ $rtype->id }}" data-rate="{{ $rtype->reservation_rate }}" data-max-guest="{{$rtype->max_guest}}" data-priceperhead="{{ $rtype->price_per_head }}">{{ $rtype->name }}</option>
                         @endforeach
                     </select>
                     <br>
+
+                    <label for="rooms" class="text-normal text-dark">Rooms:</label>
+                    <select multiple id="rooms" class="form-control select2" name="rooms[]" value="" required="" autofocus="">
+                        <option>&nbsp;</option>
+                        @foreach($rooms as $room)
+                            <option value="{{ $room->id }}">{{ $room->room_name }}</option>
+                        @endforeach
+                    </select>
+                    <br><br>
 
                     <label for="date-starts" class="text-normal text-dark">Date Starts:</label><br>
                     <input id="date-starts" type="date" class="form-control" name="date_starts" value="" required="" autofocus="" style="display: inline; width: 50%">
@@ -36,14 +36,14 @@
                     <input id="date-ends" type="date" class="form-control" name="date_ends" value="" required="" autofocus="" style="display: inline; width: 50%">
                     <input id="time-ends" type="time" class="form-control" name="time_ends" value="" required="" autofocus="" style="display: inline; width: 49%"><br><br>
 
-                    <label for="people" class="text-normal text-dark">Number of Guests:</label>
-                    <input id="people" type="number" class="form-control" name="people" value="" required="" autofocus=""><br>
-
-                    <label for="amount" class="text-normal text-dark">Total Amount:</label>
-                    <input id="amount" type="text" class="form-control" name="amount" value="0.00" required="" autofocus="" disabled=""><br>
+                    <label for="people" class="text-normal text-dark">Number of Guests (Max. <span id="max-guests"></span>): </label>
+                    <input id="people" type="number" min="1" class="form-control" name="people" value="" required="" autofocus=""><br>
 
                     <label for="downpayment" class="text-normal text-dark">Downpayment:</label>
                     <input id="downpayment" type="text" class="form-control" name="downpayment" value="2000.00php" required="" autofocus="" disabled=""><br>
+
+                    <label for="amount" class="text-normal text-dark">Total Amount:</label>
+                    <input id="amount" type="text" class="form-control" name="amount" value="0.00" required="" autofocus="" disabled=""><br>
 
                     <label for="notes" class="text-normal text-dark">Notes:</label>
                     <textarea id="notes"class="form-control" name="notes" value="" required="" autofocus="">
@@ -102,15 +102,46 @@
             </td>
         </table>
     {!! Form::close() !!}
+
+@section('js')
     <script type="text/javascript" src="{{ URL('js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL('js/tether.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL('js/components.js') }}"></script>
+    <script type="text/javascript" src="{{ URL('js/select2.min.js') }}"></script>
+
     <script>
-    var no_of_rooms = 0;
-    $('#rooms').on("change", function(){
-        no_of_rooms = $("#rooms :selected").length;
-        alert(no_of_rooms);
-        console.log(no_of_rooms);
+
+    var total_amount = 0;
+    var reservation_rate = 0;
+
+    $(document).ready(function(){
+        var no_of_rooms = 0;
+        $('#rooms').click(function(e){
+            alert("ey");
+        });
     });
 
+    $('#reservation-type').on('change', function(){
+        reservation_rate = parseFloat($(":selected", this).data('rate'));
+        $('#max-guests').html($(":selected", this).data('max-guest') + ", Additional guests: PHP" + $(":selected", this).data('priceperhead') + " per head.");
+        compute();
+    });
+
+    function compute(){
+        total_amount = parseFloat(2000);
+        total_amount += parseFloat(reservation_rate);
+        total_amount = parseFloat(total_amount).toFixed(2);
+        $('#amount').val("PHP " + total_amount);
+    }
+
     </script>
+    <script>
+    $(document.body).on('change','#rooms', function(){
+        alert('Change Happened');
+    });
+    </script>
+
+@endsection
 
 @endsection
