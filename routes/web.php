@@ -26,7 +26,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::resource('/m/users', 'UserController');
 });
 
-Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:0']], function () {
+Route::group(['prefix' => GUEST, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Role:0']], function () {
     Route::get('/', 'DashboardController@index')->name('dash');
     Route::get('/the-resort', 'DashboardController@resort')->name('resort');
     Route::get('/rooms', 'DashboardController@rooms')->name('rooms');
@@ -37,6 +37,7 @@ Route::group(['prefix' => ADMIN, 'as' => ADMIN . '.', 'middleware'=>['auth', 'Ro
     Route::get('/reservation/{id}/delete', 'ReservationController@destroy');
     Route::resource('users', 'UserController');
 });
+
 
 Route::get('/', function () {
     return view('guest.guest-welcome');

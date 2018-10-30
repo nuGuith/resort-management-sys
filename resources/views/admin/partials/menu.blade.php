@@ -16,7 +16,7 @@
     </a>
 </li>
 <li class="nav-item">
-   <a class='sidebar-link' href="{{ route(ADMIN . '.schedule.index') }}">
+   <a class='sidebar-link' href="/admin/schedule">
       <span class="icon-holder">
          <i class="c-orange-500 ti-calendar"></i>
       </span>

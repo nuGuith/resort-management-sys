@@ -28,13 +28,13 @@
                         $etime = explode(':',$edate[1]);
                     ?>
                     <tr>
-                        <td>{{ $reservation-> id }}</td>
+                        <td>{{ $reservation-> r_id }}</td>
                         <td>{{ $reservation-> name }}</td>
-                        <td><a href="{{ route(ADMIN . '.reservations.show', $reservation->id) }}" class="btn cur-p btn-info">View</a></td>
+                        <td><a href="{{ route(ADMIN . '.reservations.show', $reservation->r_id) }}" class="btn cur-p btn-info">View</a></td>
                         <td>{{ $reservation->status }}</td>
                         <td>{{ date('F d, Y h:iA', strtotime($reservation->start_datetime)) }} to {{ date('F d, Y h:iA', strtotime($reservation->end_datetime)) }}</td>
                         <td>
-                            <a href="" class="td-n  cH-blue-500 fsz-md p-5"><i class="c-red-500 ti-trash"></i>Decline</a>
+                            <a href="" class="btn cur-p btn-danger"><i class="c-white-500 ti-trash"></i> Decline</a>
                         </td>
                     </tr>
                 @endforeach

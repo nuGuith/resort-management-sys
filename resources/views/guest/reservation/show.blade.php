@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('page-header')
-    Admin <small>RESERVATION DETAILS</small>
+    Guest <small>RESERVATION DETAILS</small>
 @endsection
 
 @section('content')
@@ -34,22 +34,22 @@
             <td style="width: 40%">
                 <div class="form-group">
                     <br>
-                    <label for="date-starts" class="text-normal text-dark">Date Starts:</label><br>
+                    <label for="date-starts" class="text-normal text-dark">Start Date:</label><br>
                     <input id="date-starts" type="text" class="form-control" name="date-starts" value="{{ date('F d, Y h:iA', strtotime($reservations->start_datetime)) }}" required="" autofocus="" style="display: inline;" disabled=""><br><br>
 
-                    <label for="date-ends" class="text-normal text-dark">Date Ends:</label><br>
+                    <label for="date-ends" class="text-normal text-dark">End Date:</label><br>
                     <input id="date-ends" type="text" class="form-control" name="date-ends" value="{{ date('F d, Y h:iA', strtotime($reservations->end_datetime)) }}" required="" autofocus="" style="display: inline;" disabled=""><br><br>
 
                     <div class="row">
                         <div class="col-md-5">
                             <label for="amount" class="text-normal text-dark">Total Amount Due:</label><br>
-                            <input id="amount" type="number" class="form-control" name="amount" value="{{ $reservations->total_amount_due }}" required="" autofocus="" disabled style="display: inline; width: 88%;">
+                            <input id="amount" type="number" class="form-control" name="amount" value="{{ ($reservations->total_amount_due) }}" required="" autofocus="" disabled style="display: inline; width: 88%;">
                         </div>
                         <div class="col-md-7">
                             <label for="amount" class="text-normal text-dark">Total Amount Paid:</label><br>
                             <div style="display:flex;">
-                                <input id="amount" type="number" class="form-control" name="amount" value="" required="" autofocus="" style="display: inline; width: 88%; flex:1;" min="1">
-                                <a href="" class="btn cur-p btn-info" style="display: inline;">CONFIRM</a>
+                                <input id="amount" type="number" class="form-control" name="amount" value="{{ ($reservations->total_payment) }}" required="" autofocus="" style="display: inline; width: 88%; flex:1;" min="1" {{ $reservations->total_amount_due === $reservations->total_payment ? 'disabled' : ''}}>
+                                <button class="btn cur-p btn-info" style="display: inline;" {{ $reservations->total_amount_due === $reservations->total_payment ? 'disabled' : ''}}>SET</button>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <label for="amount" class="text-normal text-dark">Downpayment Ref#:</label><br>
                             <div style="display:flex;">
                                 <input id="ref-no" type="number" class="form-control" name="ref_no" value="{{$reservations->downpayment_ref_no}}" required="" autofocus="" style="display: inline; width: 88%; flex:1;" min="1" {{ is_null($reservations->downpayment_ref_no) ? '' : 'disabled'}}>
-                                <button id="btnDownpayment" class="btn cur-p btn-info" style="display: inline;" {{ is_null($reservations->downpayment_ref_no) ? '' : 'disabled'}}>CONFIRM</button>
+                                <button id="btnDownpayment" class="btn cur-p btn-info" style="display: inline;" {{ is_null($reservations->downpayment_ref_no) ? '' : 'disabled'}}>SET</button>
                             </div>
                         </div>
                     </div>
@@ -74,8 +74,13 @@
                     <textarea id="notes"class="form-control" name="notes" value="" required="" autofocus="" disabled="">{{ $reservations->note }}</textarea>
 
                     <div align="center" style="margin-top: 12%">
-                        <button class="btn cur-p btn-info" {{ is_null($reservations->downpayment_ref_no) ? '' : 'disabled'}}>ACCEPT RESERVATION</button>
-                        <a href="" class="btn cur-p btn-success">SAVE</a>
+                        @if ($reservations->status == "COMPLETED")
+                        <button class="btn cur-p btn-success" disabled> PAYMENT COMPLETE. </button>
+                        @elseif ($reservations->status == "ACCEPTED")
+                        <button class="btn cur-p btn-success" disabled> SUBMIT </button>
+                        @else
+                        <button class="btn cur-p btn-success"> SUBMIT </button>
+                        @endif
                         <a href="" class="btn cur-p btn-danger">CANCEL</a>
                     </div>
                 </div>
@@ -87,7 +92,7 @@
 $(document).ready(function(){
     $('#btnDownpayment').on("click", function(){
         if($("#ref-no").val() == '' || $("#ref-no").val() == null)
-            alert("The client haven't submitted a Downpayment Ref# yet.");
+            alert("Please input your Downpayment Ref# first.");
         else
             $('#down_stat').html("&#10004; Paid");
     });
