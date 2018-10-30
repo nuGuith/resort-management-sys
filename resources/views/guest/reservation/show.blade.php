@@ -81,7 +81,7 @@
                         @else
                         <button class="btn cur-p btn-success"> SUBMIT </button>
                         @endif
-                        <a href="" class="btn cur-p btn-danger">CANCEL</a>
+                        <a href="/guest/reservation" class="btn cur-p btn-danger">CANCEL</a>
                     </div>
                 </div>
             </td>

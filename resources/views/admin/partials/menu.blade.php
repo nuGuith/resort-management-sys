@@ -114,7 +114,7 @@
 <li class="nav-item">
     <a class='sidebar-link' href="{{ route(ADMIN . '.reservation.index') }}">
         <span class="icon-holder">
-          <i class="c-light-blue-500 ti-pencil"></i>
+          <i class="c-deep-orange-500 ti-pencil"></i>
         </span>
         <span class="title">My Reservations</span>
     </a>
